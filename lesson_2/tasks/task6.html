@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table,
+		td {
+			border: 1px solid #333;
+		}
+
+		thead,
+		tfoot {
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 6</h1>
+		<p class="page__text">З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+		</p>
+		<script>
+			// Отримуємо необхідні данні
+			let priceOfFirstGood = parseFloat(prompt("Введіть ціну першого товару (грн)", "0"))
+			let amountOfFirstGood = parseFloat(prompt("Введіть кількість першого товару", "0"))
+
+			let priceOfSecondGood = parseFloat(prompt("Введіть ціну другого товару (грн)", "0"))
+			let amountOfSecondGood = parseFloat(prompt("Введіть кількість другого товару", "0"))
+
+			let priceOfThirdGood = parseFloat(prompt("Введіть ціну третього товару (грн)", "0"))
+			let amountOfThirdGood = parseFloat(prompt("Введіть кількість третього товару", "0"))
+			// Проводимо обчислення
+			let totalPriceOfFirstGood = priceOfFirstGood * amountOfFirstGood
+			let totalPriceOfSecondGood = priceOfSecondGood * amountOfSecondGood
+			let totalPriceOfThirdGood = priceOfThirdGood * amountOfThirdGood
+			let totalAmount = amountOfFirstGood + amountOfSecondGood + amountOfThirdGood
+			let totalPrice = totalPriceOfFirstGood + totalPriceOfSecondGood + totalPriceOfThirdGood
+			// Виводимо отриманні данні
+			document.write(`<table >
+								<thead>
+									<tr>
+										<th>Назва</th>
+										<th>Кількість</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Ціна першого товару</td>
+										<td>${priceOfFirstGood}</td>
+									</tr>
+									<tr>
+										<td>Кількість першого товару</td>
+										<td>${amountOfFirstGood}</td>
+									</tr>
+									<tr>
+										<td>Ціна другого товару</td>
+										<td>${priceOfSecondGood}</td>
+									</tr>
+									<tr>
+										<td>Кількість другого товару</td>
+										<td>${amountOfSecondGood}</td>
+									</tr>
+									<tr>
+										<td>Ціна третього товару</td>
+										<td>${priceOfThirdGood}</td>
+									</tr>
+									<tr>
+										<td>Кількість третього товару</td>
+										<td>${amountOfThirdGood}</td>
+									</tr>
+									<tr>
+										<td>Загальна ціна</td>
+										<td>${totalPrice}</td>
+									</tr>
+									<tr>
+										<td>Загальна кількість товарів</td>
+										<td>${totalAmount}</td>
+									</tr>
+								</tbody>
+							</table>`)
+		</script>
+	</main>
+</body>
+</html>
