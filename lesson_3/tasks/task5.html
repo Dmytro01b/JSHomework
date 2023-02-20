@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 5</h1>
+		<p class="page__text">З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.
+		</p>
+		<script>
+		// Отримуємо необхідні данні
+		let aCategory = parseInt(prompt("Чи маєте ви права категорії А?( Напишіть 1 якщо так і 0 ,якщо ні","0"))
+		let bCategory = parseInt(prompt("Чи маєте ви права категорії B?( Напишіть 1 якщо так і 0 ,якщо ні","0"))
+		let cCategory = parseInt(prompt("Чи маєте ви права категорії C?( Напишіть 1 якщо так і 0 ,якщо ні","0"))
+		// Виводимо данні
+		if (aCategory){
+			document.write(`Ви можете керувати мотоциклом</br>`)
+		}
+		if (bCategory){
+			document.write(`Ви можете керувати легковим автомобілем</br>`)
+		}
+		if (cCategory){
+			document.write(`Ви можете керувати вантажним автомобілем</br>`)
+		}
+		</script>
+	</main>
+</body>
+</html>

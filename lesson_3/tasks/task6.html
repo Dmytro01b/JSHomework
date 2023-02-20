@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 6</h1>
+		<p class="page__text">З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+		</p>
+		<script>
+		// Отримуємо необхідні данні
+		let numberOfTheDayOfTheWeek = parseInt(prompt("Введіть номер дня тижня (від 1 до 7)", "0"))
+		// Виводимо результат
+		if (numberOfTheDayOfTheWeek<=0){
+			document.write("Схоже ви допустили помилку при введені данних(номер дня тижня не може бути менше або рівним нулю)")
+		}else if (numberOfTheDayOfTheWeek === 1){
+			document.write("Понеділок")
+		}else if (numberOfTheDayOfTheWeek === 2){
+			document.write("Вівторок")
+		}else if (numberOfTheDayOfTheWeek === 3){
+			document.write("Середа")
+		}else if (numberOfTheDayOfTheWeek === 4){
+			document.write("Четверг")
+		}else if (numberOfTheDayOfTheWeek === 5){
+			document.write("П'ятниця")
+		}else if (numberOfTheDayOfTheWeek === 6){
+			document.write("Субота")
+		}else if (numberOfTheDayOfTheWeek === 7){
+			document.write("Неділя")
+		}else if (numberOfTheDayOfTheWeek > 7){
+			document.write("Схоже ви допустили помилку при введені данних(номер дня тижня не може бути менше більше 7)")
+		}
+		</script>
+	</main>
+</body>
+</html>

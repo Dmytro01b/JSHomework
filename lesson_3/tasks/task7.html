@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 7</h1>
+		<p class="page__text">З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+		</p>
+		<script>
+		// Отримуємо необхідні данні 
+		let numberOfMonth = parseInt(prompt("Введіть номер місяця (від 1 до 12)","1"))
+		// Виводимо результат
+		if (numberOfMonth<=0){
+			document.write('Схоже , що ви допустили помилку  ( номер місяця не може бути меншим або рівним 0)')
+		}else if (numberOfMonth <= 2){
+			document.write('Схоже , що цей місяць відноситься до зими')
+		}else if(numberOfMonth <= 5){
+			document.write('Схоже , що цей місяць відноситься до весни')
+		}else if(numberOfMonth <= 8){
+			document.write('Схоже , що цей місяць відноситься до літа')
+		}else if(numberOfMonth <= 11){
+			document.write('Схоже , що цей місяць відноситься до осіні')
+		}else if(numberOfMonth === 12){
+			document.write('Схоже , що цей місяць відноситься до зими')
+		}else if (numberOfMonth>12){
+			document.write('Схоже , що ви допустили помилку  ( номер місяця не може бути меншим більшим 12)')
+		}
+		
+		
+		</script>
+	</main>
+</body>
+</html>
