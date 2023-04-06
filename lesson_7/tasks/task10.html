@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 10</h1>
+		<p class="page__text"> Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.
+		</p>
+		<script>
+			let temperatureIndicatorsAmount = parseFloat(prompt(`Введіть кількість показників температури`))
+
+			function getTemperatureIndicators(temperatureIndicatorsAmount) {
+				let temperatureIndicators = []
+				for (let i = 0; i < temperatureIndicatorsAmount; i++) {
+					let temperature = parseFloat(prompt(`Введіть показник температури`))
+					temperatureIndicators.push(temperature)
+				}
+				return temperatureIndicators
+			}
+			
+			let TemperatureIndicators = getTemperatureIndicators(temperatureIndicatorsAmount)
+			document.write(`Показники температури = ${TemperatureIndicators} <br>`)
+
+			function getAverageOfPositiveTemperatureIndicators(numbers) {
+				let positiveTemperatureCounter = 0
+				let positiveTemperatureSum = 0
+				for (let i = 0; i < numbers.length; i++) {
+					if(numbers[i]>0) {
+					positiveTemperatureCounter++
+					positiveTemperatureSum+=numbers[i]
+				}
+				}
+				let temperatureAverage = positiveTemperatureSum / numbers.length
+				return temperatureAverage
+			}
+			let avg = getAverageOfPositiveTemperatureIndicators(TemperatureIndicators)
+			document.write(`Середнє значення для додатніх показників температури = ${avg}`)
+		</script>
+	</main>
+</body>
+</html>

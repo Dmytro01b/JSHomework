@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table, th, td {
+		border: 1px solid;
+		}
+
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 4</h1>
+		<p class="page__text">Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+		</p>
+		<script>
+			let firstNum = parseInt(prompt(`Введіть перше число`))
+			let secondNum = parseInt(prompt(`Введіть друге число`))
+			let thirdNum = parseInt(prompt(`Введіть третє число`))
+
+			function manyResults(num1,num2,num3) {
+				if(firstNum%2===0) counterOdd++
+				if(firstNum>=0) counterOfPositives++
+				if(firstNum>100) countersMoreThan100++
+
+				if(secondNum%2===0) counterOdd++
+				if(secondNum>=0) counterOfPositives++
+				if(secondNum>100) countersMoreThan100++
+
+				if(thirdNum%2===0) counterOdd++
+				if(thirdNum>=0) counterOfPositives++
+				if(thirdNum>100) countersMoreThan100++
+
+				return counterOdd,counterOfPositives,countersMoreThan100
+			}
+			let counterOdd = 0
+			let counterOfPositives = 0
+			let countersMoreThan100 = 0
+				let result = manyResults(firstNum,secondNum,thirdNum)
+			document.write(`Кільксть парних = ${counterOdd}<br> Кількість додатніх = ${counterOfPositives} <br> Кількість більше за 100 = ${countersMoreThan100}
+			`)
+
+		</script>
+	</main>
+</body>
+</html>

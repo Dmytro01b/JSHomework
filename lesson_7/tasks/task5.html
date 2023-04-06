@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table, th, td {
+		border: 1px solid;
+		}
+
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 5</h1>
+		<p class="page__text">Створити окремі функції, які переводять:	</p>
+		<ul>
+				<li>Сантиметри у дюйми;</li>
+				<li>Кілограми у фунти;</li>
+				<li>Кілометри у милі.</li>
+		</ul>
+	
+		<script>
+			let centimeter = parseInt(prompt(`Введіть сантиметри які необхідно перевести в дюйми`))
+			let kilograms = parseInt(prompt(`Введіть кілограми які необхідно перевести в фунти`))
+			let kilometrs = parseInt(prompt(`Введіть кілометри які необхідно перевести в милі`))
+			function cmInInches() {
+				let inches = centimeter * 0.39
+				return inches
+			}
+			function kgInPounds() {
+				let pounds = kilograms * 2.2
+				return pounds
+			}
+			function kmInMiles() {
+				let miles = kilometrs * 0.62
+				return miles
+			}
+			document.write(`${centimeter} сантиметрів = ${cmInInches()} дюймів <br>`)
+			document.write(`${kilograms} кілограмів = ${kgInPounds()} фунтів <br>`)
+			document.write(`${kilometrs} кілометрів = ${kmInMiles()} миль <br>`)
+		</script>
+	</main>
+</body>
+</html>

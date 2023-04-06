@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 1</h1>
+		<p class="page__text">Створити функцію, яка за номером місяця повертає його назву.
+		</p>
+		<script>
+		let numberOfMounth = parseInt(prompt(`Введіть номер місяця від 1 до 12`))
+
+		function returnNameOfMounth() {
+			if(numberOfMounth===1) return `Січень`
+			else if (numberOfMounth===2) return `Грудень`
+			else if (numberOfMounth===3) return `Березень`
+			else if (numberOfMounth===4) return `Квітень`
+			else if (numberOfMounth===5) return `Травень`
+			else if (numberOfMounth===6) return `Червень`
+			else if (numberOfMounth===7) return `Липень`
+			else if (numberOfMounth===8) return `Серпень`
+			else if (numberOfMounth===9) return `Вересень`
+			else if (numberOfMounth===10) return `Жовтень`
+			else if (numberOfMounth===11) return `Листопад`
+			else if (numberOfMounth===12) return `Грудень`
+			else return `Error`
+		}
+		document.write(returnNameOfMounth())
+		</script>
+	</main>
+</body>
+</html>

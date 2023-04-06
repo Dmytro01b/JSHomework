@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table{
+			border: 1px solid black;
+		}
+		td{
+			width: 15px;
+			height: 15px;
+			border: 1px solid black;
+		}
+
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 13</h1>
+		<p class="page__text">Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель. 
+		</p>
+		<script>
+			// Отримуємо необхідні данні
+			const N = parseInt(prompt(`Вкажіть кількість рядків`))
+			const M = parseInt(prompt(`Вкажіть кількість стовбців`))
+			let K = parseInt(prompt(`Вкажіть кількість снарядів`))
+			let  = 0
+			let YCoordinatesOfShip = 0
+			let xCoordinatesOfShip = 0
+			document.write(`<table><tbody>`)
+				for (let i = 0; i < N; i++) {
+					YCoordinatesOfShip = 1 + Math.floor(Math.random()*(N-1+1))
+					document.write(`<tr>`)
+						for (let a = 0; a < M; a++) {
+							document.write(`<td>`)
+								xCoordinatesOfShip = 1 + Math.floor(Math.random()*(M-1+1))
+							document.write(`</td>`)
+						}
+					document.write(`</td>`)
+				}
+			document.write(`</tbody></table>`)
+			let userYCoordinatesOfShip
+			let userXCoordinatesOfShip
+			do{
+			userYCoordinatesOfShip = parseInt(prompt(`Вкажіть в який рядок ви хочете зробити постріл`))
+			userXCoordinatesOfShip = parseInt(prompt(`Вкажіть в який стовбець ви хочете зробити постріл`))
+			
+				if(YCoordinatesOfShip===userYCoordinatesOfShip && xCoordinatesOfShip===userXCoordinatesOfShip){
+					--K
+					alert(`Ви влучили! <br>`) 
+					document.write(`Ви влучили! <br>`) 
+					document.write(`Y координата користувача ${userYCoordinatesOfShip}<br>`)
+					document.write(`X координата користувача ${userXCoordinatesOfShip}<br>`)
+					break
+				}else{
+					--K
+					alert(`Ви не влучили . Залишилось спроб - ${K} `)
+					document.write(`Y координата користувача ${userYCoordinatesOfShip}<br>`)
+					document.write(`X координата користувача ${userXCoordinatesOfShip}<br>`)
+				}
+					
+			}while(K>0)
+			document.write(`<br><br><br>Y координата корабля ${YCoordinatesOfShip}<br>`)
+			document.write(`X координата корабля ${xCoordinatesOfShip}<br>`)
+	
+		</script>
+	
+	</main>
+</body>
+</html>
