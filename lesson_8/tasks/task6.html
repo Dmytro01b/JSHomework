@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 2px solid;
+			}
+			table {
+				padding: 5px;
+			}
+			tr,
+			td {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 6</h1>
+			<p class="page__text">
+				Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити
+				користувач (кількість грошей задається).
+			</p>
+
+			<script>
+				let usersBalance = parseInt(prompt("Введіть кількість грошей "));
+				let NumberOfGoods = parseInt(prompt("Введіть кількість товарів"));
+
+				function getGoodsNames(numOfGoods) {
+					let names = [];
+					for (let i = 0; i < numOfGoods; i++) names.push(prompt(`Введіть назву ${i + 1} товару`));
+					return names;
+				}
+				let goodsNames = getGoodsNames(NumberOfGoods);
+				document.write(`Назви товарів = ${goodsNames}<br>`);
+
+				function getGoodsPrice(numOfGoods) {
+					let prices = [];
+					for (let i = 0; i < numOfGoods; i++) prices.push(parseInt(prompt(`Введіть ціну ${i + 1} товару`)));
+					return prices;
+				}
+				let goodsPrices = getGoodsPrice(NumberOfGoods);
+				document.write(`Назви товарів = ${goodsPrices}<br>`);
+
+				function getGoodsWhichUserCanAllow(goodsNames, goodsPrices, usersBalance, NumberOfGoods) {
+					let goodsThatUserCanAllow = [];
+					for (let i = 0; i < NumberOfGoods; i++) {
+						if (goodsPrices[i] < usersBalance) goodsThatUserCanAllow.push(goodsNames[i]);
+					}
+					return goodsThatUserCanAllow;
+				}
+				let goodsWhichUserCanAllow = getGoodsWhichUserCanAllow(goodsNames, goodsPrices, usersBalance, NumberOfGoods);
+				document.write(`Товари які може дозволити собі користувач = ${goodsWhichUserCanAllow}<br>`);
+			</script>
+		</main>
+	</body>
+</html>

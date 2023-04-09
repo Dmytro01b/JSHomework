@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 5</h1>
+			<p class="page__text">Дано послідовність оцінок учня. Підрахувати кількість:</p>
+			<ol>
+				<li>двійок</li>
+				<li>кількість хороших оцінок (добре, відмінно);</li>
+				<li>кількість оцінок, які нижче середнього</li>
+			</ol>
+
+			<script>
+				let numberOfMarks = parseInt(prompt("Введіть кількість оцінок учня"));
+				function getStudentsMarks(numOfMarks) {
+					let marks = [];
+					for (let i = 0; i < numOfMarks; i++) {
+						marks.push(parseInt(prompt("Введіть оцінку учня від 1 до 5")));
+					}
+					return marks;
+				}
+				let studentsMarks = getStudentsMarks(numberOfMarks);
+				document.write(`Оцінки учня = ${studentsMarks}<br>`);
+				function getNumOfDeuce(marks) {
+					let counter = 0;
+					for (let i = 0; i < marks.length; i++) {
+						if (marks[i] === 2) counter++;
+					}
+					return counter;
+				}
+
+				let amountOfDeuce = getNumOfDeuce(studentsMarks);
+				document.write(`Кількість двійок = ${amountOfDeuce}<br>`);
+
+				function getGoodMarks(marks) {
+					let counter = 0;
+					for (let i = 0; i < marks.length; i++) {
+						if (marks[i] === 4 || marks[i] === 5) counter++;
+					}
+					return counter;
+				}
+				let amountOfGoodMarks = getGoodMarks(studentsMarks);
+				document.write(`Кількість хороших оцінок = ${amountOfGoodMarks}<br>`);
+
+				function getAverageMark(marks) {
+					let sum = 0;
+					for (let i = 0; i < marks.length; i++) {
+						sum += marks[i];
+					}
+					return sum / marks.length;
+				}
+				let getAverageScore = getAverageMark(studentsMarks);
+				document.write(`Середня оцінка студента = ${getAverageScore}<br>`);
+				function getMarksUnderAverage(marks) {
+					let counter = 0;
+					for (let i = 0; i < marks.length; i++) {
+						if (marks[i] < getAverageScore) counter++;
+					}
+					return counter;
+				}
+				let marksUnderAverage = getMarksUnderAverage(studentsMarks);
+				document.write(`Кількість оцінок, які нижче середнього = ${marksUnderAverage}<br>`);
+			</script>
+		</main>
+	</body>
+</html>

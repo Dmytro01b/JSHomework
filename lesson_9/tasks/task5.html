@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 5</h1>
+			<p class="page__text">Дано масив елементів. Знайти добуток додатних елементів</p>
+			<script>
+				let numberOfElements = parseInt(prompt("Введіть кількість елементів"));
+				function getArray(numberOfElem) {
+					let array = [];
+					for (let i = 0; i < numberOfElem; i++) {
+						array.push(parseInt(prompt(`Введіть ${i + 1} число `)));
+					}
+					return array;
+				}
+				let arrayOfElements = getArray(numberOfElements);
+				function getProductOfPositiveElements(array) {
+					let product = 1;
+					for (const iterator of array) {
+						if (iterator > 0) product *= iterator;
+					}
+					return product;
+				}
+				let productOfPositiveElements = getProductOfPositiveElements(arrayOfElements);
+				document.write(`Добуток додатних елементів = ${productOfPositiveElements}`);
+			</script>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			img {
+				max-width: 100%;
+
+				border-radius: 50%;
+				border: 1px solid black;
+			}
+			a {
+				display: inline-block;
+				max-width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 8</h1>
+			<p class="page__text">
+				Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином
+				значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться).
+				Знаходити сумарний виграш.
+			</p>
+			<script>
+				let numbersOfValues = parseInt(prompt(`Введіть кількість елементів із значеннями від -500 до 500`));
+				function fillArray(numbersOfValues) {
+					let array = [];
+					for (let index = 0; index < numbersOfValues; index++) {
+						array.push(Math.floor(Math.random() * 1001) - 500);
+					}
+					return array;
+				}
+				let numOfVal = fillArray(numbersOfValues);
+				document.write(numOfVal);
+				sum = 0;
+				do {
+					let userNumberOfElement = parseInt(prompt("Введіть номер елементу"));
+					if (Boolean(userNumberOfElement) === false) break;
+					numOfVal.forEach((element, index) => {
+						if (index === userNumberOfElement) {
+							sum += element;
+							alert(`Ви потрапили на елемент з числом ${element}`);
+						}
+					});
+				} while (true);
+				if (sum > 0) document.write(`Ви виграли ${sum} гривень<br>`);
+				else if (sum < 0) document.write(`Ви програли ${sum} гривень<br>`);
+			</script>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 1</h1>
+			<p class="page__text">
+				Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься
+				(відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна
+				трійка)).
+			</p>
+			<script>
+				let numberOfSubjects = parseInt(prompt("Введіть кількість предметів"));
+				function getUserMarks() {
+					let marksArray = [];
+					for (let i = 1; i <= numberOfSubjects; i++) {
+						let userMark = parseInt(prompt(`Введіть оцінку з ${i} предемету`));
+						marksArray.push(userMark);
+					}
+					return marksArray;
+				}
+				function getAverageScore(marks) {
+					let sum = 0
+					for (let i = 0; i < marks.length; i++) {
+						sum+=marks[i]
+					}
+					let averageScore = sum / marks.length
+					return averageScore;
+				}
+				function studentCategory(marks) {
+					let studentCategory;
+					let counter5 = 0;
+					let counter4 = 0;
+					let counter3 = 0;
+					let counter2 = 0;
+					let counter1 = 0;
+					for (let i = 0; i < marks.length; i++) {
+						if (marks[i] === 5) counter5++;
+						else if (marks[i] === 4) counter4++;
+						else if (marks[i] === 3) counter3++;
+						else if (marks[i] === 2) counter2++;
+						else if (marks[i] === 1) counter1++;
+					}
+					if (counter5 === numberOfSubjects) studentCategory = "Відмінник";
+					else if (counter2 > 0 || counter1 > 0) studentCategory = "Двійочник";
+					else if (counter3 > 0) studentCategory = "Трійочник";
+					else studentCategory = "Хорошист";
+					return studentCategory;
+				}
+
+				let studentMarks = getUserMarks();
+				let avgScore = getAverageScore(studentMarks);
+				let studentsCategory = studentCategory(studentMarks);
+				document.write(`Оцінки студента - ${studentMarks} <br>`);
+				document.write(`Середня оцінка студента - ${avgScore}<br>`);
+				document.write(`Категорія студента - ${studentsCategory}<br>`);
+			</script>
+		</main>
+	</body>
+</html>

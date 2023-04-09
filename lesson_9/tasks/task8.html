@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			img {
+				max-width: 100%;
+
+				border-radius: 50%;
+				border: 1px solid black;
+			}
+			a {
+				display: inline-block;
+				max-width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 8</h1>
+			<p class="page__text">Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</p>
+			<script>
+				let amounOfNumbers = parseInt(prompt("Введіть кількість автономерів"));
+				function getArrayOfCarNumbers(amount) {
+					let array = [];
+					for (let i = 0; i < amounOfNumbers; i++) {
+						array.push(prompt("Введіть номер автомобіля"));
+					}
+					return array;
+				}
+				let arrayOfCarNumbers = getArrayOfCarNumbers(amounOfNumbers);
+				document.write(`Номера автомобілів - ${arrayOfCarNumbers}<br>`);
+				function getArrayOfCarNumbersWhichStartsWithA(arr) {
+					let array = [];
+					for (let i = 0; i < arr.length; i++) {
+						if (arr[i].startsWith("А")) array.push(arr[i]);
+					}
+					return array;
+				}
+
+				let arrayOfCarNumbersWhichStartsWithA = getArrayOfCarNumbersWhichStartsWithA(arrayOfCarNumbers);
+				document.write(`Номера автомобілів які починаються на "А" - ${arrayOfCarNumbersWhichStartsWithA}`);
+			</script>
+		</main>
+	</body>
+</html>

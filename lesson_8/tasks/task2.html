@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 2</h1>
+			<p class="page__text">
+				Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+			</p>
+			<ul>
+				<li>номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+				<li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+				<li>загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</li>
+			</ul>
+			<script>
+				function getNumberOfCustomers() {
+					let numberOfCustomersByWeek = [];
+					for (let i = 1; i <= 7; i++) {
+						let numberOfCustomersByDay = parseInt(prompt(`Введіть кількість клієнтів протягом ${i} дня`));
+						numberOfCustomersByWeek.push(numberOfCustomersByDay);
+					}
+					return numberOfCustomersByWeek;
+				}
+				let numberOfCustomers = getNumberOfCustomers();
+				function getDayNumbersWhenAmountOfCustomersLessThan20(numberOfCustomers) {
+					let DayNumbersWhenAmountOfCustomersLessThan20 = [];
+					for (let j = 0; j <= 7; j++) {
+						if (numberOfCustomers[j] < 20) DayNumbersWhenAmountOfCustomersLessThan20.push(1 + j);
+					}
+					return DayNumbersWhenAmountOfCustomersLessThan20;
+				}
+				function getDayNumberWhenAmountOfCustomersIsMin(numberOfCustomers) {
+					let DayNumberWhenAmountOfCustomersIsMin = 0;
+					for (let i = 1; i <= 7; i++) {
+						if (numberOfCustomers[i] >= DayNumberWhenAmountOfCustomersIsMin) {
+							DayNumberWhenAmountOfCustomersIsMin === 1;
+						}
+					}
+					return DayNumberWhenAmountOfCustomersIsMin;
+				}
+				function getNumberOfCustomersInWorkDays(numberOfCustomers) {
+					let sum = 0
+					for (let i = 0; i <= 4; i++) {
+						sum+=numberOfCustomers[i] 
+					}
+					return sum
+				}
+				function getNumberOfCustomersInWeekends(numberOfCustomers) {
+					let sum = 0
+					sum+=numberOfCustomers[5]
+					sum+=numberOfCustomers[6]
+				}
+				document.write(`Кількість відвідувачів магазину протягом тижня - ${numberOfCustomers} <br>`);
+				document.write(
+					`Номери днів протягом яких кількість відвідувачів була меншою за 20 - ${getDayNumbersWhenAmountOfCustomersLessThan20(
+						numberOfCustomers
+					)}<br>`
+				);
+				let dayWhenCustomersIsMin = getDayNumberWhenAmountOfCustomersIsMin(numberOfCustomers);
+				document.write(`Номери днів, коли кількість відвідувачів була мінімальною ${dayWhenCustomersIsMin} <br>`);
+				document.write(`Загальна кількість клієнтів у робочі дні - ${getNumberOfCustomersInWorkDays(numberOfCustomers)} <br>`)
+				document.write(`Загальна кількість клієнтів у вихідні дні - ${getNumberOfCustomersInWeekends(numberOfCustomers)}`)
+			</script>
+		</main>
+	</body>
+</html>

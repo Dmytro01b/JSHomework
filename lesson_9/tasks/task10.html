@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style></style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 10</h1>
+			<p class="page__text">
+				Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у
+				грн.
+			</p>
+			<script>
+				const TAX = 0.2;
+				let numberOfPrices = parseInt(prompt("Введіть кількість цін"));
+				function getArrayOfPrices(numOfPrices) {
+					let array = [];
+					for (let i = 0; i < numberOfPrices; i++) {
+						array.push(parseInt(prompt(`Введіть ${i + 1} ціну`)));
+					}
+					return array;
+				}
+				let arrayOfPrices = getArrayOfPrices(numberOfPrices);
+				document.write(`Масив цін - ${arrayOfPrices} гривень<br>`);
+				function getTaxArray(arr) {
+					let array = [];
+					arr.forEach((element, index, baseArrRef) => {
+						array.push(baseArrRef[index] * TAX);
+					});
+					return array;
+				}
+				let taxArray = getTaxArray(arrayOfPrices);
+				document.write(`Масив податків - ${taxArray} гривень<br>`);
+				function getSumOfTax(taxArr) {
+					let sum = 0;
+					for (let i = 0; i < taxArr.length; i++) {
+						sum += taxArr[i];
+					}
+					return sum;
+				}
+				let sumOfTax = getSumOfTax(taxArray);
+				document.write(`Сума сплаченого податку = ${sumOfTax} гривень<br>`);
+			</script>
+		</main>
+	</body>
+</html>

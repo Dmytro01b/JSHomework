@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 4</h1>
+			<p class="page__text">Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :</p>
+			<ul>
+				<li>починаються на букву «А»;</li>
+				<li>перша і остання літери співпадають;</li>
+				<li>складаються з більше ніш 5 символів;</li>
+			</ul>
+
+			<script>
+				let amountOfCarNumbers = parseInt(prompt("Введіть кількість номерів автомобілів"));
+				function getCarNumbers(amount) {
+					let carNums = [];
+					for (let i = 0; i < amount; i++) {
+						carNums.push(prompt(`Введіть номера автомобіля у форматі АА1111АА`));
+					}
+					return carNums;
+				}
+				let carNumbers = getCarNumbers(amountOfCarNumbers);
+				document.write(`Номера автомобілів = ${carNumbers}<br>`);
+				function getCarNumbersWhichStartsOnA(carNum) {
+					let counter = 0;
+					for (let i = 0; i < carNum.length; i++) {
+						if (carNumbers[i].startsWith("А") || carNumbers[i].startsWith("A")) counter++;
+					}
+					return counter;
+				}
+				let carNumbersWhichStartsOnA = getCarNumbersWhichStartsOnA(carNumbers);
+				document.write(`Номери які починаються на А = ${carNumbersWhichStartsOnA}<br>`);
+
+				function getFirstAndLastLetterMatch(carNum) {
+					let counter = 0;
+					for (let i = 0; i < carNum.length; i++) {
+						if (carNumbers[i].startsWith() === carNumbers[i].endsWith()) counter++;
+					}
+					return counter;
+				}
+				let firstAndLastLetterMatch = getFirstAndLastLetterMatch(carNumbers);
+				document.write(`Перша і остання літери співпадають ${firstAndLastLetterMatch} разів<br>`);
+
+				function getCarNumsWhichContainMoreThan5Symbols(carNum) {
+					let counter = 0;
+					for (let i = 0; i < carNum.length; i++) {
+						if (carNum[i].length > 5) counter++;
+					}
+					return counter;
+				}
+				let carNumsWhichContainMoreThan5Symbols = getCarNumsWhichContainMoreThan5Symbols(carNumbers);
+				document.write(`Складаються з більше ніш 5 символів = ${carNumsWhichContainMoreThan5Symbols}`);
+			</script>
+		</main>
+	</body>
+</html>

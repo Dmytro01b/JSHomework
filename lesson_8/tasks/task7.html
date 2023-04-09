@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	</style>
+</head>
+<body>
+	<main class="page">
+		<h1 class="page__title">Задача 7</h1>
+		<p class="page__text">Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+			<ol>
+				<li>за весь рік;</li>
+				<li>у першій половині року;</li>
+				<li>у другій половині року;</li>
+				<li>за літо;</li>
+				<li>за ІІ квартал;</li>
+				<li>за парні місяці (з парними номерами);</li>
+				<li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+			</ol>
+		</p>
+		<script>
+			
+			function getBills() {
+				let bills = []
+				for (let i = 0; i < 12; i++) {
+					bills.push(parseInt(prompt(`Введіть ${i+1} платіжку`)))
+					
+				}
+				return bills
+			}
+			let billsArray = getBills()
+			document.write(`Платіжки = ${billsArray}<br>`)
+
+			function getSumOfYear(bills) {
+				let sum = 0
+				for (let i = 0; i < 12; i++) {
+					sum+=bills[i]
+				}
+				return sum
+			}
+			let sumOfYear = getSumOfYear(billsArray)
+			document.write(`Сума платіжок за весь рік ${sumOfYear}<br>`)
+			function getSumOfFirstHalfYear(bills) {
+				let sum = 0
+				for (let i = 0; i < 6; i++) {
+					sum+=bills[i]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за першу половину року ${getSumOfFirstHalfYear(billsArray)}<br>`)
+			function getSumOfSecondHalfYear(bills) {
+				let sum = 0
+				for (let i = 0; i < 6; i++) {
+					sum+=bills[i+6]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за другу половину року ${getSumOfSecondHalfYear(billsArray)}<br>`)
+			function getSumOfSummer(bills) {
+				let sum = 0
+				for (let i = 0; i < 3; i++) {
+					sum+=bills[i+5]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за літо ${getSumOfSummer(billsArray)}<br>`)
+			function getSumOfSecondQuarter(bills) {
+				let sum = 0
+				for (let i = 0; i < 3; i++) {
+					sum+=bills[i+3]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за другий квартал ${getSumOfSecondQuarter(billsArray)}<br>`)
+			function getSumOfOddMonth(bills) {
+				let sum = 0
+				for (let i = 1; i <= 12; i++) {
+					if (i%2===0) sum+=bills[i-1]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за парні місяці ${getSumOfOddMonth(billsArray)}<br>`)
+			function getSumOfFIrstMonthOfSeason(bills) {
+				let sum = 0
+				for (let i = 1; i <= 12; i++) {
+					if (i%3===0) sum+=bills[i-1]
+				}
+				return sum
+			}
+			document.write(`Сума платіжок за місяці, які є початковими у сезоні (весна, літо, осінь, зима) ${getSumOfFIrstMonthOfSeason(billsArray)}<br>`)
+		</script>
+	</main>
+</body>
+</html>

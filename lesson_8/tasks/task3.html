@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 3</h1>
+			<p class="page__text">Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
+			<script>
+				let numberOfNames = parseInt(prompt("Введіть кількість імен в масиві"));
+				function getStudentNames(number) {
+					let studentNames = [""];
+					for (let i = 0; i < number; i++) studentNames.push(prompt("Введіть ім'я учня"));
+					return studentNames;
+				}
+
+				let studentNames = getStudentNames(numberOfNames);
+				document.write(`Імена учнів = ${studentNames}`);
+
+				function getHowMuchTimesMeetsNameIvan(names) {
+					let counter = 0;
+					for (let i = 0; i < names.length; i++) {
+						if (names[i] === "Іван") counter++;
+					}
+					return counter;
+				}
+
+				let howMuchTimesMeetsNameIvan = getHowMuchTimesMeetsNameIvan(studentNames);
+				document.write(`Кількість разів зустрічається ім’я «Іван» = ${howMuchTimesMeetsNameIvan}`);
+			</script>
+		</main>
+	</body>
+</html>

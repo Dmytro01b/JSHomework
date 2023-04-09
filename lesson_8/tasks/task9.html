@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style></style>
+	</head>
+	<body>
+		<main class="page">
+			<h1 class="page__title">Задача 9</h1>
+			<p class="page__text">
+				Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів.
+				Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка
+				пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра
+				продовжується до тих пір, поки не будуть потоплені усі кораблі.
+			</p>
+			<script>
+				let numberOfCells = parseInt(prompt("Введіть кількість клітинок одновимірного масиву"));
+				let numberOfShips = parseInt(prompt("Введіть кількість одиночних кораблів"));
+				function getShipsInArray(numOfCells, numOfShips) {
+					let array = new Array(numOfCells);
+					array.fill(0);
+					
+					for (let index = 0; index < numOfShips; index++) {
+						let random = Math.floor(Math.random() * numOfCells);
+						if (array[index] === 0) array.splice(random, 1, 1);
+					}
+					return array;
+				}
+				let arrayWithShips = getShipsInArray(numberOfCells, numberOfShips);
+				do {
+					if (numberOfShips>0) {
+						let userCell = parseInt(prompt("Введіть клітинку куди будете стріляти(клітинки починаються з 0)"));
+						arrayWithShips.forEach((element, index, arrayWithShips) => {
+						if (userCell === index && element === 1) {
+							element === 0;
+							alert(`Ви влучили! Залишилось ${--numberOfShips} кораблів`);
+						} else if(userCell === index && element !== 1) alert("Ви не влучили , спробуйте ще ")
+					});
+					}else break
+					
+				} while (true);
+			</script>
+		</main>
+	</body>
+</html>
